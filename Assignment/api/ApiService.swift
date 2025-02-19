@@ -27,6 +27,7 @@ class ApiService : NSObject {
                     completion([])
                     // Error
                 }
+                completion(empData)
             }
         }.resume()
     }

@@ -17,7 +17,6 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         tableView = UITableView(frame: .zero, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
@@ -47,7 +46,8 @@ class ContentViewController: UIViewController {
     
     func fetchData() {
         activityIndicator.startAnimating()
-        
+       
+        self.viewModel.fetchAPI()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if let data = self.viewModel.data {
                 self.devices = data
